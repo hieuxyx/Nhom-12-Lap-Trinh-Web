@@ -1,0 +1,300 @@
+<html>
+    <head>
+        <title>OLIVE YOUNG</title>
+        <style>
+            .banner {
+                background: url("banner.jpg") center/cover;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .banner-content {
+                text-align: center;
+            }
+            .banner-content h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                background: #ff5e15;
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            h1 {
+                text-align: left;
+                color: rgb(46, 84, 46);
+                font-size: 45px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .search-section, .search-container {
+                text-align: center;
+            }
+            .search-section h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            #search-input {
+                width: 300px;
+                padding: 10px;
+                border: 1px solid #0c781b;
+                border-radius: 5px 0 0 5px;
+            }
+            #search-button {
+                padding: 10px 20px;
+                background: #1b5711;
+                color: #fff;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+            }
+            #search-button:hover {
+                background: #0e6c30;
+            }
+            .wrapper img {
+                width: 35%;
+                height: auto;
+                text-align: left;
+            }
+            .wrapper img button {
+                display: inline-block;
+                padding-left: 0 25px;
+            }
+            a.mua {
+                text-decoration: none;
+                border: 2px solid rgb(109, 109, 139);
+                border-radius: 20px;
+                background: white;
+                color: rgb(69, 15, 120);
+                padding: 8px 15px;
+                transition: all 0.3s ease;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            a.mua:hover {
+                background: rgb(237, 44, 30);
+                color: white;
+            }
+            nav ul {
+                text-align: center;
+            }
+            nav ul li {
+                display: inline;
+                padding: 15px;
+                color: rgb(36, 107, 68);
+                font-size: 20px;
+            }
+            nav ul li:hover {
+                font-size: 25px;
+                border-bottom: 1px solid rgb(25, 220, 15);
+            }
+            nav ul li a {
+                color: rgb(224, 22, 22);
+                text-decoration: none;
+            }
+           
+            .item {
+                list-style: none;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 20px; 
+                position: relative;
+            }
+            img, .item img {
+                width: 100%;
+                height: 90%;
+                padding-top: 30px;
+            }
+            .item img {
+                flex-basis: 30%;
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+            .ds {
+                align-items: center;
+                margin-bottom: 50px;
+            }
+            .ds span a {
+                text-decoration: none;
+                color: brown;
+                font-family: Arial;
+                font-size: 15px;
+            }
+            .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#purchase-form input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#purchase-form button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#purchase-form button:hover {
+    background-color: #45a049;
+}
+        </style>
+    </head>
+    <body>
+        <section class="banner">
+            <div class="banner-content"></div>
+        </section>
+        <section class="search-section">
+            <div class="search-container">
+              <input type="text" id="search-input" placeholder="Nhập từ khóa..." />
+              <button id="search-button">Tìm kiếm</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Trang chủ</a></li>
+                    <li><a href="new.html">New</a></li>
+                    <li><a href="">Sale</a></li>
+                    <li><a href="">Skincare</a></li>
+                    <li><a href="">Makeup</a></li>
+                    <li><a href="">Body</a></li>
+                    <li><a href="DangNhap.html">Đăng nhập</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="purchase-form">
+                        <h3>Nhập thông tin</h3>
+                        <label for="ten">Họ và tên:</label>
+                        <input type="text" id="ten" name="name"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="diachi">Địa chỉ:</label>
+                        <input type="text" id="diachi" name="address"><br><br>
+                        <button id="submit-btn" onclick="return submitForm()">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+            <span class="wrapper">
+                <img src="https://th.bing.com/th?id=OIP.J1pdz51AKXEV1k9q18FXhwHaEM&w=332&h=188&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2">
+            </span>
+            <span class="wrapper">
+            </span>
+            <div class="item">
+                <div class="ds"><a href="ct1.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1913/ed9a36ab-b473-450d-89b4-fffe1acc2a45.jpg?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Bộ 3 Serum Goodal Green Tangerine Vita-C D 30mL</a><br>
+                        <b>699.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html"  onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+                <div class="ds"><a href="ct2.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1595/a8ef6b5f-b940-4f14-85ae-a144cf4f85a5.jpg?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Kem chống nắng SKIN1004 Madagascar Centella Hyalu-Cica Water-Fit 50mL*2ea</a><br>
+                        <b>230.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html"  onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+                <div class="ds"><a href="ct3.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1524/5a2c4ac1-8528-4146-97d3-3485fdb0c2e7.png?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Kem chống nắng Joseon Matte: Mugwort + Camelia 18g</a><br>
+                        <b>189.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html"  onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+                <div class="ds"><a href="ct4.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1886/e486bfb4-1f1a-4402-b683-c8f948d8469c.jpg?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Xịt khoáng d'Alba White Truffle First Spray Serum 100mL + 100mL</a><br>
+                        <b>499.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html"  onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+                <div class="ds"><a href="ct5.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1196/427a3e93-d534-4105-9f0a-458929726cfa.jpg?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Son BBIA Ready To Wear Wate</a><br>
+                        <b>175.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html" onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+                <div class="ds"><a href="ct6.html">
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1067/039e2676-2f46-4987-95bd-93aee05d6d6e.jpg?RS=810x810&AR=0"></a>
+                    <span>
+                        <a href="ct1.html">Bút kẻ viền môi AMUSE</a><br>
+                        <b>139.000 VNĐ</b><br>
+                        <a class="mua" href="DangNhap.html"  onclick="showPurchaseForm()">Mua ngay</a>
+                    </span>
+                </div>
+            </div>
+            <script>
+                function showPurchaseForm() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+function submitForm() {
+    var name = document.getElementById("ten").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("diachi").value;
+    console.log("Tên: " + name + ", Email: " + email + ", Địa chỉ: " + address);
+    alert("Đơn hàng đã được đặt thành công! Cảm ơn bạn " + name + " đã mua hàng từ OLIVE YOUNG!");
+    closeModal();
+    return false;
+}
+            </script>
+        </body>
+    </html>
+
+    
